@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import HeroVideo from "./components/HeroVideo";
+import PartnerLogosMarquee from "./components/PartnerLogosMarquee";
 
 export const metadata: Metadata = {
   title: "Conciergerie - Professional Property Management",
@@ -53,28 +55,27 @@ export default function HomePage() {
 
   return (
     <main>
-      {/* Animated Hero Section */}
-      <section className="relative overflow-hidden bg-white text-black">
-        {/* Animated Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-grid-pattern animate-grid-flow"></div>
-        </div>
+      {/* Hero with video background (Jarvis-style) */}
+      <HeroVideo />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+      {/* Scrolling partner / apps we work with */}
+      <PartnerLogosMarquee />
+
+      {/* Optional: image grid block - keep below hero for variety, or remove */}
+      <section className="relative overflow-hidden bg-white text-black py-16 sm:py-24">
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="animate-fade-in-up">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-black">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 Transform Your Property Into{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-600 to-gold-500 animate-gradient">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-600 to-gold-500">
                   Profit
                 </span>
-              </h1>
+              </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
                 Professional property management services that handle everything
                 from guest communication to cleaning, maintenance, and revenue
-                optimization. Focus on what matters while we maximize your rental
-                income.
+                optimization.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link
@@ -91,68 +92,51 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-
-            {/* Right - Animated Image Grid */}
-            <div className="relative h-[500px] animate-fade-in">
+            <div className="relative h-[400px]">
               <div className="grid grid-cols-2 gap-4 h-full">
                 <div className="space-y-4">
-                  <div className="h-48 rounded-2xl overflow-hidden bg-gray-200 animate-float shadow-2xl">
+                  <div className="h-44 rounded-2xl overflow-hidden bg-gray-200 shadow-xl">
                     <Image
                       src="/images/home1.jpg"
                       alt="Luxury property interior"
                       width={400}
                       height={300}
                       className="w-full h-full object-cover"
-                      priority
                     />
                   </div>
-                  <div className="h-48 rounded-2xl overflow-hidden bg-gray-200 animate-float-delay-1 shadow-2xl">
+                  <div className="h-44 rounded-2xl overflow-hidden bg-gray-200 shadow-xl">
                     <Image
                       src="/images/hero-2.jpg"
                       alt="Guest check-in experience"
                       width={400}
                       height={300}
                       className="w-full h-full object-cover"
-                      priority
                     />
                   </div>
                 </div>
                 <div className="space-y-4 mt-8">
-                  <div className="h-48 rounded-2xl overflow-hidden bg-gray-200 animate-float-delay-2 shadow-2xl">
+                  <div className="h-44 rounded-2xl overflow-hidden bg-gray-200 shadow-xl">
                     <Image
                       src="/images/hero-3.jpg"
                       alt="Professional cleaning service"
                       width={400}
                       height={300}
                       className="w-full h-full object-cover"
-                      priority
                     />
                   </div>
-                  <div className="h-48 rounded-2xl overflow-hidden bg-gray-200 animate-float-delay-3 shadow-2xl">
+                  <div className="h-44 rounded-2xl overflow-hidden bg-gray-200 shadow-xl">
                     <Image
                       src="/images/hero-4.jpg"
                       alt="Revenue growth analytics"
                       width={400}
                       height={300}
                       className="w-full h-full object-cover"
-                      priority
                     />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Wave Separator */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-            className="w-full h-16 fill-gray-50"
-          >
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
-          </svg>
         </div>
       </section>
 

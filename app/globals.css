@@ -251,6 +251,24 @@ h3 {
   animation: gridFlow 20s linear infinite;
 }
 
+/* Partner logos marquee - infinite horizontal scroll (unique name to avoid Tailwind override) */
+@keyframes logo-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-marquee-scroll {
+  animation: logo-marquee-scroll 35s linear infinite;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
 /* Background utilities for animated gradients */
 .bg-size-200 {
   background-size: 200% 100%;
